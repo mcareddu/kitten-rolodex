@@ -12,8 +12,6 @@ class App extends Component {
       monsters: [],
       searchField: '',
     };
-
-    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   componentDidMount() {
@@ -22,7 +20,7 @@ class App extends Component {
       .then(monsters => this.setState({monsters}));
   }
 
-  handleSearchChange({ target }) {
+  handleSearchChange = ({ target }) => {
      this.setState(
        { searchField: target.value },
        () => console.log('Search updated:', this.state.searchField)
