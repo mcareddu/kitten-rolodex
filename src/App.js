@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Component } from "react";
 
@@ -7,18 +6,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      string: 'Hello bro' 
-    }
+      monsters: [
+        {
+          name: 'Freezer'
+        },
+        {
+          name: 'Cell'
+        },
+        {
+          name: 'Majin Bu'
+        },
+      ]
+    };
   }
 
   render() {
     return(
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>{this.state.string}</p>
-          <button onClick={() => this.setState({string: 'Hello bro!!!'})}>Change text</button>
-        </header>
+        {
+          this.state.monsters.map(({ name }, idx) => <h1 key={ idx }>{ name }</h1>)
+        }
       </div>
     );
   }
