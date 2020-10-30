@@ -12,7 +12,7 @@ const Card = ({ id, name, email }) => {
     return (
         <div className="card-container">
             <img alt="avatar" src={roboHashUrl(id)} />
-            <h1>{ name }</h1>
+            <h2>{ name }</h2>
             <p>{ email }</p>
         </div>
     );
